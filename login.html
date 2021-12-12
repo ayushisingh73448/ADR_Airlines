@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login And Registration page</title>
+</head>
+
+<body>
+
+
+    </div>
+    <div class="link">
+        <nav>
+            <ul color="black">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li><a href="flight.html">Flight</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <nav>
+
+                <form action="" class="form">
+                    <div class="action">
+                        <span class="load show" id="login-action" onclick="openLoginPage()">Login</span
+        >
+        <span class="load" onclick="openRegPage()" id="reg-action"
+          >Sign up</span
+        >
+      </div>
+      
+      <div class="login show-page">
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <button>Login</button>
+        <a href="#" onclick="openRegPage()">Sign up</a>
+      </div>
+      <div class="reg">
+        <input type="text" placeholder="First name" />
+        <input type="text" placeholder="Last name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <input type="number" placeholder="Phone no." />
+        <button>Sign up</button>
+        <a href="#" onclick="openLoginPage()">Login</a>
+      </div>
+    </form>
+  </body>
+  <script>
+    function openLoginPage() {
+      document.querySelector(".reg").classList.remove("show-page");
+      document.querySelector(".login").classList.add("show-page");
+      document.getElementById("login-action").classList.add("show");
+      document.getElementById("reg-action").classList.remove("show");
+    }
+    function openRegPage() {
+      document.querySelector(".reg").classList.add("show-page");
+      document.querySelector(".login").classList.remove("show-page");
+      document.getElementById("reg-action").classList.add("show");
+      document.getElementById("login-action").classList.remove("show");
+    }
+  </script>
+</html>
