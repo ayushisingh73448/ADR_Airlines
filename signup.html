@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="signup.css" />
+    <title>Login And Registration page</title>
+</head>
+
+<body>
+
+
+    </div>
+    <div class="link">
+        <nav>
+            <ul color="black">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li><a href="flight.html">Flight</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <nav>
+
+                <form action="" class="form">
+                    <div class="action">
+
+                        <span class="load" onclick="openRegPage()" id="reg-action">Sign up</span
+        >
+      </div>
+      
+      
+      <div class="reg">
+        
+    
+        <input type="text" placeholder="First name" name="firstName" class="form-control" />
+        <input type="text" placeholder="Last name" name="lastName" class="form-control" />
+        <input type="email" placeholder="Email" name="email" class="form-control" />
+        <input type="password" placeholder="Password" class="form-control" />
+        <input type="number" placeholder="Phone no." name="phoneNo" class="form-control" />
+        <button type="submit" name="submit"  class="btn-submit btn-block">Sign up</button>
+        
+      </div>
+    </form>
+  </body>
+  <script>
+    
+    function openRegPage() {
+      document.querySelector(".reg").classList.add("show-page");
+      document.querySelector(".login").classList.remove("show-page");
+      document.getElementById("reg-action").classList.add("show");
+      document.getElementById("login-action").classList.remove("show");
+    }
+  </script>
+
+
+<script>
+  const scriptURL =
+ 'https://script.google.com/macros/s/AKfycbzOefBMKpefUCk1gNtuWs5Uh6GpXzHKLiaiDh2e534v0RiL2962GOtqIGVl8ULZ2aE1Pg/exec'
+  const form = document.forms['google-sheet']
+  
+  form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thanks for login"))
+  .catch(error => console.error('Error!', error.message))
+  })
+  </script>
+</html>

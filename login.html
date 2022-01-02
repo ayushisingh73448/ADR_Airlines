@@ -7,6 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="login.css" />
     <title>Login And Registration page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $document.ready(function() {
+            $(".form").on('submit', function(e) {
+
+                e.preventDefault();
+                var name = $(".name").val();
+                var p = $(".pas").val();
+                $.post("https://script.google.com/macros/s/AKfycbwMIP4T_YWi9AjLHTlo4DxLqJI57E8RkRrDC8XKDAc/dev", {
+                    n: name,
+                    p: p
+                }, function() {
+
+                    alert(done);
+                });
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -19,6 +38,7 @@
                 <li>
                     <a href="index.html">Home</a>
                 </li>
+                <li><a href="signup.html">Signup</a></li>
                 <li><a href="flight.html">Flight</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="contact.html">Contact us</a></li>
@@ -32,26 +52,16 @@
                     <div class="action">
                         <span class="load show" id="login-action" onclick="openLoginPage()">Login</span
         >
-        <span class="load" onclick="openRegPage()" id="reg-action"
-          >Sign up</span
-        >
+       
       </div>
       
       <div class="login show-page">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button>Login</button>
-        <a href="#" onclick="openRegPage()">Sign up</a>
+        <input type="text" placeholder="Username"  class="name"  value=""/>
+        <input type="text" placeholder="Password"  class="pas" value=""/>
+        <button type="submit" name="submit"  class="btn-submit btn-block">Login</button>
+        
       </div>
-      <div class="reg">
-        <input type="text" placeholder="First name" />
-        <input type="text" placeholder="Last name" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <input type="number" placeholder="Phone no." />
-        <button>Sign up</button>
-        <a href="#" onclick="openLoginPage()">Login</a>
-      </div>
+      
     </form>
   </body>
   <script>
@@ -61,11 +71,9 @@
       document.getElementById("login-action").classList.add("show");
       document.getElementById("reg-action").classList.remove("show");
     }
-    function openRegPage() {
-      document.querySelector(".reg").classList.add("show-page");
-      document.querySelector(".login").classList.remove("show-page");
-      document.getElementById("reg-action").classList.add("show");
-      document.getElementById("login-action").classList.remove("show");
-    }
+   
   </script>
+
+
+
 </html>
